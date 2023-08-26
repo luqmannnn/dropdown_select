@@ -3,9 +3,6 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        type: environment
-        description: Select the environment
       choice:
         type: choice
         description: Select the environment
@@ -22,7 +19,9 @@ jobs:
 
       - name: print environment
         run: | 
-          echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
-          echo "boolean is ${{ github.event.inputs.boolean }}" / ${{ inputs.boolean }} 
           echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
+
+      - name: your action
+        run: |
+          echo "Now you can continue with your project!"
           
